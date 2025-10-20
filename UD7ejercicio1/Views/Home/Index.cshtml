@@ -1,8 +1,13 @@
-﻿@{
+﻿@model UD7ejercicio1.Models.Entities.Persona
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Bienvenido</h1>
+
+    <p>Estamos a día @ViewBag.Date</p>
+    <p>@ViewData["Greeting"]</p>
+    <p>Hola, me llamo @Model.Nombre @Model.Apellido y tengo @Model.Edad años.</p>
 </div>
