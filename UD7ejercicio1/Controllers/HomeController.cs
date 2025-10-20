@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using UD7ejercicio1.Models;
 using UD7ejercicio1.Models.Entities;
+using UD7ejercicio1.Models.DAL;
 
 namespace UD7ejercicio1.Controllers
 {
@@ -32,6 +33,12 @@ namespace UD7ejercicio1.Controllers
             ViewBag.Date = DateTime.Now.ToLongDateString();
             Persona Alvaro= new Persona(1, "Alvaro", "Marquez", 23);
             return View(Alvaro);
+        }
+
+        public IActionResult listadoPersonas()
+        {
+            var listado = ListadoPersonas.GetListado();
+            return View(listado);
         }
 
         public IActionResult Privacy()

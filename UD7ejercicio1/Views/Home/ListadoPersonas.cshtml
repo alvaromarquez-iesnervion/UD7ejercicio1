@@ -1,0 +1,33 @@
+﻿@model List<UD7ejercicio1.Models.Entities.Persona>
+
+@{
+    ViewData["Title"] = "Listado de Personas";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Listado de Personas</h1>
+
+    <table class="table table-striped table-bordered mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var persona in Model)
+            {
+                <tr>
+                    <td>@persona.Id</td>
+                    <td>@persona.Nombre</td>
+                    <td>@persona.Apellido</td>
+                    <td>@persona.Edad</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<a href="@Url.Action("")">Home</a>
