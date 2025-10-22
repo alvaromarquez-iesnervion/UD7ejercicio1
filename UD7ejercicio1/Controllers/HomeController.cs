@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using UD7ejercicio1.Models;
 using UD7ejercicio1.Models.Entities;
 using UD7ejercicio1.Models.DAL;
+using UD7ejercicio1.Models.VM;
 
 namespace UD7ejercicio1.Controllers
 {
@@ -54,12 +55,8 @@ namespace UD7ejercicio1.Controllers
 
         public IActionResult EditarPersona()
         {
-            var listado = ListadoPersonas.GetListado();
-            Random random = new Random();
-            var persona = listado[random.Next(listado.Count)];
-
-            ViewBag.Departamentos = ListadoDepartamentos.GetListado();
-            return View(persona);
+            EditarPersonaVM vm = new EditarPersonaVM();
+            return View(vm);
         }
 
 

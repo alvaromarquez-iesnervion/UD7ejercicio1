@@ -34,5 +34,12 @@ namespace UD7ejercicio1.Models.DAL
             return lista[position-1];
         }
 
+        public static Persona RandPersona()
+        {
+            Random random = new Random();
+            return lista[random.Next(lista.Count)];
+        }
+             
+
     }
 }
