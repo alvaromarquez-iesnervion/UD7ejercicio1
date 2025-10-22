@@ -1,0 +1,24 @@
+﻿@model UD7ejercicio1.Models.Entities.Persona
+
+@{
+    ViewData["Title"] = "Detalles de Persona 3";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="card shadow-sm p-4 mt-3">
+    <h3>@Model.Nombre @Model.Apellido</h3>
+    <ul class="list-unstyled mt-2">
+        <li><strong>ID:</strong> @Model.Id</li>
+        <li><strong>Nombre:</strong> @Model.Nombre</li>
+        <li><strong>Apellidos:</strong> @Model.Apellido</li>
+        <li><strong>Edad:</strong> @Model.Edad años</li>
+    </ul>
+</div>
+
+<div class="mt-4">
+    <a asp-action="listadoPersonas" class="btn btn-secondary">Volver al listado</a>
+    <a asp-action="Index" class="btn btn-primary">Inicio</a>
+</div>
+
+

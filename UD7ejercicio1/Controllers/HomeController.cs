@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System;
 using Microsoft.AspNetCore.Mvc;
 using UD7ejercicio1.Models;
 using UD7ejercicio1.Models.Entities;
@@ -45,6 +46,24 @@ namespace UD7ejercicio1.Controllers
         {
             return View();
         }
+
+        public IActionResult Persona3()
+        {
+            var listado = ListadoPersonas.GetListado();
+
+            return View(listado[2]);
+        }
+
+        public IActionResult EditarPersona()
+        {
+            var listado = ListadoPersonas.GetListado();
+            Random random = new Random();
+            var persona = listado[random.Next(listado.Count)];
+
+            ViewBag.Departamentos = ListadoDepartamentos.GetListado();
+            return View(persona);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

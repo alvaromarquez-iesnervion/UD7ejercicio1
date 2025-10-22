@@ -1,17 +1,24 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UD7ejercicio1.Models.Entities;
 
 namespace UD7ejercicio1.Models.DAL
 {
-    public class ListadoPersonas
+    /// <summary>
+    /// Contiene un listado estático de personas.
+    /// </summary>
+    public static class ListadoPersonas
     {
-        // Lista privada donde almacenamos las personas
+        // 🔹 Obtenemos la lista de departamentos para asignarlos a las personas
+        private static List<Departamento> departamentos = ListadoDepartamentos.GetListado();
+
+        // Lista privada donde almacenamos las personas con su departamento asignado
         private static List<Persona> lista = new List<Persona>()
         {
-            new Persona(1, "Álvaro", "Márquez", 23),
-            new Persona(2, "Lucía", "Serrano", 19),
-            new Persona(3, "Carlos", "Jiménez", 28),
-            new Persona(4, "María", "López", 22)
+            new Persona(1, "Álvaro", "Márquez", 23, departamentos[1]), // Desarrollo
+            new Persona(2, "Lucía", "Serrano", 19, departamentos[2]),  // Marketing
+            new Persona(3, "Carlos", "Jiménez", 28, departamentos[0]), // RRHH
+            new Persona(4, "María", "López", 22, departamentos[3])     // Ventas
         };
 
         // Devuelve la lista completa

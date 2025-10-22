@@ -1,0 +1,50 @@
+﻿@model UD7ejercicio1.Models.Entities.Persona
+
+@{
+    ViewData["Title"] = "Editar Persona";
+    var departamentos = (List<UD7ejercicio1.Models.Entities.Departamento>)ViewBag.Departamentos;
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<form asp-action="EditarPersona" method="post" class="border rounded p-4 shadow-sm">
+
+    <div class="form-group mb-3">
+        <label for="Id">ID</label>
+        @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="Nombre">Nombre</label>
+        @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="Apellido">Apellido</label>
+        @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="Edad">Edad</label>
+        @Html.TextBoxFor(m => m.Edad, new { @class = "form-control", type = "number", min = "0" })
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="Departamento">Departamento</label>
+        <select asp-for="Departamento.IdDepartamento" class="form-select">
+            @foreach (var dep in departamentos)
+            {
+                var seleccionado = Model.Departamento != null && Model.Departamento.IdDepartamento == dep.IdDepartamento
+                ? "selected"
+                : "";
+
+                <option value="@dep.IdDepartamento" selected="@seleccionado">
+                    @dep.NombreDepartamento
+                </option>
+            }
+        </select>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
