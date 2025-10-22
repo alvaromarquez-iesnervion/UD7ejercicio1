@@ -28,5 +28,8 @@ namespace UD7ejercicio1.Models.DAL
         {
             return listaDepartamentos.FirstOrDefault(d => d.IdDepartamento == id);
         }
+
+        
+
     }
 }

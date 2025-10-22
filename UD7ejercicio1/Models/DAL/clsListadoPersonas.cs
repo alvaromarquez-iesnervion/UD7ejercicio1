@@ -27,10 +27,12 @@ namespace UD7ejercicio1.Models.DAL
             return lista;
         }
 
-        // Busca una persona por su Id
-        public static Persona? GetPersonaById(int id)
+  
+
+        public static Persona GetPersonaByPosition(int position)
         {
-            return lista.FirstOrDefault(p => p.Id == id);
+            return lista[position-1];
         }
+
     }
 }

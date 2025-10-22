@@ -49,9 +49,7 @@ namespace UD7ejercicio1.Controllers
 
         public IActionResult Persona3()
         {
-            var listado = ListadoPersonas.GetListado();
-
-            return View(listado[2]);
+            return View(ListadoPersonas.GetPersonaByPosition(3));
         }
 
         public IActionResult EditarPersona()
