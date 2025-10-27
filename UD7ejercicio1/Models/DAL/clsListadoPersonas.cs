@@ -15,10 +15,10 @@ namespace UD7ejercicio1.Models.DAL
         // Lista privada donde almacenamos las personas con su departamento asignado
         private static List<Persona> lista = new List<Persona>()
         {
-            new Persona(1, "Álvaro", "Márquez", 23, departamentos[1]), // Desarrollo
-            new Persona(2, "Lucía", "Serrano", 19, departamentos[2]),  // Marketing
-            new Persona(3, "Carlos", "Jiménez", 28, departamentos[0]), // RRHH
-            new Persona(4, "María", "López", 22, departamentos[3])     // Ventas
+            new Persona(1, "Álvaro", "Márquez", 23, 2), // Desarrollo
+            new Persona(2, "Lucía", "Serrano", 19, 3),  // Marketing
+            new Persona(3, "Carlos", "Jiménez", 28, 1), // RRHH
+            new Persona(4, "María", "López", 22, 4)     // Ventas
         };
 
         // Devuelve la lista completa

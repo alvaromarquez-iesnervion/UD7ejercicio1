@@ -6,7 +6,7 @@
     public class Departamento
     {
         // Propiedad que identifica de forma única al departamento
-        public int IdDepartamento { get; set; }
+        public int IdDepartamento { get; }
 
         // Nombre del departamento (por ejemplo, Recursos Humanos, Ventas, etc.)
         public string NombreDepartamento { get; set; }
